@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebApplication10.Models.Item>
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Управление товарами</title>
+</head>
+
+<body>
+    <h2>Управление товарами</h2>
+    <p>@ViewBag.Test</p>
+    <div class="btn">
+        @Html.ActionLink("Все заказы", "Orders")
+        @Html.ActionLink("Выйти", "Out")
+    </div>
+    <div class="wrap">
+
+        <table>
+            <tr>
+                <td><p>ID товара</p></td>
+                <td><p>Название товара</p></td>
+                <td><p>Описание</p></td>
+                <td><p>Фото</p></td>
+                <td><p>Стоимость</p></td>
+                <td><p>Количество</p></td>
+            </tr>
+            @foreach (WebApplication10.Models.Item i in Model)
+            {
+                <tr>
+                    <td><p>@i.Id</p></td>
+                    <td><p>@i.Title</p></td>
+                    <td><p>@i.Description</p></td>
+                    <td><p>@i.Picture</p></td>
+                    <td><p>@i.Price</p></td>
+                    <td>
+                        @using (Html.BeginForm())
+                        {
+                            <input name="quant" value="@i.Quantity" />
+                            <input type="hidden" name="id" value="@i.Id" />
+                            <input type="submit" value="Сохранить" />
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+        @Html.ActionLink("Добавить товар", "Add")
+       
+    </div>
+    <style>
+        td {
+            padding: 10px 15px;
+            border: 1px solid #eee;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h2, .wrap, .btn {
+            width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</body>
+</html>

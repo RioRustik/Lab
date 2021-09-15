@@ -1,0 +1,40 @@
+﻿@model WebApplication10.Models.Customer
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Оформление заказа</title>
+</head>
+<body>
+    <div>
+
+        <div class="wrap">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <p>Ваше имя: @Html.TextBoxFor(x => x.Name)</p>
+                <p>Ваша фамилия: @Html.TextBoxFor(x => x.Surname)</p>
+                <p>Ваше отчество: @Html.TextBoxFor(x => x.Patronymic)</p>
+                <p>Ваш телефон: @Html.TextBoxFor(x => x.Phone)</p>
+                <p>Ваш email: @Html.TextBoxFor(x => x.Email)</p>
+
+
+                <input type="submit" value="Оформить заказ" />
+            }
+        </div>
+        <style>
+            .wrap{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </div>
+</body>
+</html>
+

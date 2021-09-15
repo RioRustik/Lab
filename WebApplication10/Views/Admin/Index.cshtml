@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Добро пожаловать, админ!</title>
+</head>
+
+<body>
+    <h2>Добро пожаловать, админ!</h2>
+    <div class="btn">
+        @Html.ActionLink("Все заказы", "Orders")
+        @Html.ActionLink("Управление товарами", "Items")
+        @Html.ActionLink("Добавить товар", "Add")
+        @Html.ActionLink("Выйти", "Out")
+    </div>
+    <style>
+        td {
+            padding: 10px 15px;
+            border: 1px solid #eee;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h2, .wrap, .btn {
+            width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</body>
+</html>

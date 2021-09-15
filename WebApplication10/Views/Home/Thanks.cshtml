@@ -1,0 +1,28 @@
+﻿@model WebApplication10.Models.Order
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Спасибо за заказ!</title>
+</head>
+<body>
+    <div>
+
+
+        <h1>Спасибо за заказ!</h1>
+        <p>Ваш номер заказа: @Model.Id. Мы позвоним вам в течение 5 минут</p>
+        <p>@Html.ActionLink("Продолжить покупки", "Index")</p>
+    </div>
+    <style>
+        h1, p, a{
+            width: 1200px;
+            margin: 10px auto;
+        }
+    </style>
+</body>
+</html>

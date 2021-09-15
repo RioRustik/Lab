@@ -1,0 +1,46 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+body {
+    margin: 0;
+}
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    width: 1200px;
+    font-size: 35px;
+    margin: 30px auto;
+}
+.wrap{
+    /*width: 1200px;*/
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.item{
+    width: 350px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.done, .error {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+div.cart {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.cart a:last-of-type {
+    font-size: 25px;
+    color: #424242;
+}
+.error{
+    color: red;
+}

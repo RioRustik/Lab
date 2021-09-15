@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebApplication10.Models.Detail>
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Все заказы</title>
+</head>
+
+<body>
+    <h2>Все заказы</h2>
+    <div class="btn">
+        @Html.ActionLink("Управление товарами", "Items")
+        @Html.ActionLink("Выйти", "Out")
+    </div>
+    <div class="wrap">
+        
+        <table>
+            <tr>
+                <td><p>ID заказа</p></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td><p>Название товара</p></td>
+                            <td><p>Количество</p></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            @{
+                int i = 0;
+                foreach (WebApplication10.Models.Detail d in Model)
+                {
+
+                    if (i != d.OrderId)
+                    {
+                        <tr>
+                            <td><p>@d.OrderId</p></td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td class="name"><p>@d.Title</p></td>
+                                        <td><p>@d.Quantity</p></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        i = d.OrderId;
+                    }
+                    else
+                    {
+                        <tr>
+                            <td></td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td class="name"><p>@d.Title</p></td>
+                                        <td><p>@d.Quantity</p></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        </table>
+    </div>
+    <style>
+        td {
+            padding: 10px 15px;
+            border: 1px solid #eee;
+        }
+        .name{
+            width: 150px;
+        }
+        tr {
+            border: 5px solid #eee;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h2, .wrap, .btn{
+            width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</body>
+</html>

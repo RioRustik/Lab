@@ -1,0 +1,51 @@
+﻿@model WebApplication10.Models.Item
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Добавить товар</title>
+</head>
+
+<body>
+    <h2>Добавить товар</h2>
+    <div class="btn">
+        @Html.ActionLink("Все заказы", "Orders")
+        @Html.ActionLink("Управление товарами", "Items")
+        @Html.ActionLink("Выйти", "Out")
+    </div>
+    <div class="wrap">
+        <p>@ViewBag.done</p>
+        
+        @using (Html.BeginForm())
+        {
+            <p>Название товара: <input name="title" /></p>
+            <p>Описание товара: <input name="description" /></p>
+            <p>Изображене товара: <input name="picture" /></p>
+            <p>Цена: <input name="price" /></p>
+            <p>Количество: <input name="quantity" /></p>
+            <input type="submit" value="Добавить товар" />
+        }
+    </div>
+    <style>
+        td {
+            padding: 10px 15px;
+            border: 1px solid #eee;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h2, .wrap, .btn {
+            width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</body>
+</html>
+
+
